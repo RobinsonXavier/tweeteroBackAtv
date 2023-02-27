@@ -1,4 +1,5 @@
 import tweetRepository from "../repositories/tweetRepository.js";
+import userRepository from "../repositories/userRepository.js";
 
 function postTweet (req, res) {
   const { tweet, username } = req.body;
@@ -7,7 +8,7 @@ function postTweet (req, res) {
     return res.status(400).send('Todos os campos são obrigatórios!');
   }
 
-  const { avatar } = usuarios.find(user => user.username === username);
+  const avatar = userRepository.getAvatarByUser(username);
 
   tweetRepository.addTweet(username, tweet, avatar);
 
@@ -29,8 +30,8 @@ function getTweets (req, res) {
     res.status(400).send('Informe uma página válida!');
     return;
   }
-
-  if (tweets.length <= 10) {
+  const size = tweetRepository.tweetsSize();
+  if (size <= 10) {
     return res.send(tweetRepository.reverseTweets());
   }
 

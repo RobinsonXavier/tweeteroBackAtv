@@ -1,5 +1,5 @@
 class Tweet {
-  constructor(tweet, username, avatar) {
+  constructor(username, tweet, avatar) {
     this.tweet = tweet;
     this.username = username;
     this.avatar = avatar;
