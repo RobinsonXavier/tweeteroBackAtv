@@ -9,7 +9,7 @@ function postUser (req, res) {
   }
 
   userRepository.addUser(username, avatar);
-
+  
   res.status(200).send('OK deu tudo certo');
 }
 

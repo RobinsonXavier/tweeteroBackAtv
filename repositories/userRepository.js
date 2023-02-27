@@ -3,7 +3,8 @@ import Usuario from "../classes/userClass.js";
 const usuarios = [];
 
 function addUser(username, avatar) {
-  usuarios.push(new Usuario({ username, avatar }));
+  usuarios.push(new Usuario(username, avatar));
+  console.log(usuarios);
 };
 
 function getAvatarByUser(username) {

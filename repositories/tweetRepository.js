@@ -3,7 +3,7 @@ import Tweet from "../classes/tweetClass.js";
 const tweets = [];
 
 function addTweet(username, tweet, avatar) {
-  tweets.push(new Tweet({ username, tweet, avatar }));
+  tweets.push(new Tweet(username, tweet, avatar));
 };
 
 function filterUserTweets(username) {
