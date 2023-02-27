@@ -1,0 +1,9 @@
+class Tweet {
+  constructor(tweet, username, avatar) {
+    this.tweet = tweet;
+    this.username = username;
+    this.avatar = avatar;
+  }
+};
+
+export default Tweet;
