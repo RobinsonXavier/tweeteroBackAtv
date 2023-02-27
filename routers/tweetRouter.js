@@ -1,10 +1,11 @@
 import { Router } from 'express';
+import tweetsController from '../controllers/tweetsController.js';
 
 const tweetRouter = Router();
 
 tweetRouter
-  .post('/tweets')
-  .get('/tweets')
-  .get('/tweets/:username');
+  .post('/tweets', tweetsController.postTweet)
+  .get('/tweets', tweetsController.getTweets)
+  .get('/tweets/:username', tweetsController.getUserTweets);
 
 export default tweetRouter;
