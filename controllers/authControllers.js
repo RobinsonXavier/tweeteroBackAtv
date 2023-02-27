@@ -1,3 +1,5 @@
+import userRepository from "../repositories/userRepository.js";
+
 function postUser (req, res) {
   const { username, avatar } = req.body;
 
@@ -6,7 +8,7 @@ function postUser (req, res) {
     return;
   }
 
-  usuarios.push({ username, avatar });
+  userRepository.addUser(username, avatar);
 
   res.status(200).send('OK deu tudo certo');
 }
